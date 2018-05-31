@@ -23,6 +23,7 @@
     "appmetrics-zipkin": "^1.0.4",
     "body-parser": "^1.18.3",
     "express": "^4.15.3",
+    "handlebars": "^4.0.11",
     "log4js": "^1.1.1",
     "nodemailer": "^4.6.4",
     "strong-supervisor": "^6.2.0"
