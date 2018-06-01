@@ -6,7 +6,7 @@ const mailConfig = require('../config/mail-config.json');
 const handlebars = require('handlebars');
 var compiledTemplate = '';
 
-module.exports = function (app, basepath) {
+module.exports = function (app, basepath, logger) {
   app.use(bodyParser.json()); // for parsing application/json
   app.use(bodyParser.urlencoded({
     extended: true
@@ -14,8 +14,9 @@ module.exports = function (app, basepath) {
   var router = express.Router();
 
   if (compiledTemplate == '') {
-    fs.readFile("server/config/email-templates/email-template.html", "utf8", function (err, data) {
-      if (err) throw err;
+    fs.readFile("server/config/email-template.html", "utf8", function (err, data) {
+      if (err)
+        logger.fatal(err);
       let template = data.toString();
       compiledTemplate = handlebars.compile(template);
     });
@@ -45,7 +46,6 @@ module.exports = function (app, basepath) {
       html: emailMessage // html body
     };
 
-    // setup email data with unicode symbols
     let mailMessageSup = {
       from: '"Service-Link" <' + mailConfig.from + '>', // sender address
       to: mailConfig.SLSupport, // list of receivers
@@ -56,25 +56,20 @@ module.exports = function (app, basepath) {
 
     // Send mail to support
     transporter.sendMail(mailMessageCus, (error, info) => {
-      if (error) {
-        return console.log(error);
-      }
-      console.log('Message sent: %s', info.messageId);
-      res.json({
-        status: info.response
-      });
+      if (error)
+        logger.fatal(error);
+      else
+        logger.info('Message sent: %s, Response: %s', info.messageId, info.response);
     });
 
     // Send mail to customer
     transporter.sendMail(mailMessageSup, (error, info) => {
-      if (error) {
-        return console.log(error);
-      }
-      console.log('Message sent: %s', info.messageId);
-      res.json({
-        status: info.response
-      });
+      if (error)
+        logger.fatal(error);
+      else
+        logger.info('Message sent: %s, Response: %s', info.messageId, info.response);
     });
+    res.sendStatus(200);;
   })
 
   app.use(basepath, router);

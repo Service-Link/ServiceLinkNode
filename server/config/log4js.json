@@ -1,0 +1,21 @@
+{
+    "appenders": {
+      "allLogs": {
+        "type": "file",
+        "filename": "log/app.log",
+        "maxLogSize": 200000000,
+        "numBackups": 5
+      },
+      
+      "email": {
+        "type": "@log4js-node/smtp", 
+        "SMTP": { "host": "test", "port": 587, "auth": {"user": "test", "pass": "test"} }, 
+        "recipients": "test",
+        "subject": "ServiceLinkNode - Error"
+      },
+      "just-errors": { "type": "logLevelFilter", "appender": "email", "level": "ERROR" }
+    },
+    "categories": {
+      "default": { "appenders": [ "allLogs", "just-errors" ], "level": "INFO" }
+    }
+  }
