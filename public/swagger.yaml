@@ -1,0 +1,60 @@
+swagger: "2.0"
+info:
+  description: "Website for Service-Link."
+  version: "1.0.0"
+  title: "Service-Link Webiste"
+  contact:
+    email: "support@service-link.us"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/"
+tags:
+- name: "demo"
+  description: "Request a demo"
+schemes:
+- "http"
+paths:
+  /demo:
+    post:
+      tags:
+      - "demo"
+      summary: "Send request for a demo"
+      description: ""
+      operationId: "addDemo"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Demo object that needs to be added"
+        required: true
+        schema:
+          $ref: "#/definitions/Demo"
+      responses:
+        405:
+          description: "Invalid input"
+definitions:
+  Demo:
+    type: "object"
+    required:
+    - "name"
+    - "company"
+    - "email"
+    - "country"
+    properties:
+      name:
+        type: "string"
+      company:
+        type: "string"
+      email:
+        type: "string"
+      country:
+        type: "string"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
