@@ -1,0 +1,9 @@
+{
+    "smtpHost": "test",
+    "smtpPort": 587,
+    "smtpSSL": false,
+    "smtpUser": "test",
+    "smtpPassword": "test",
+    "from": "test",
+    "SLSupport": "test"
+}
