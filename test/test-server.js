@@ -10,7 +10,7 @@ describe('Testing Server', function() {
     this.timeout(10000);
   });
 
-  it('Public endpoint returns "Hello!"', function(done){
+  it('Public endpoint returns "<title>ServiceLink</title>"', function(done){
     var responseString = '';
 
     var options = {
@@ -25,7 +25,7 @@ describe('Testing Server', function() {
       });
 
       response.on('end', function () {
-        expect(responseString).to.include('Hello world! This is a StarterKit!');
+        expect(responseString).to.include('<title>ServiceLink</title>');
         done();
       });
     };
