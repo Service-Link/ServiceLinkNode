@@ -1,4 +1,4 @@
-# ServiceLinkNode
+# ServiceLinkNode [![Build Status](https://travis-ci.org/SudharakaP/ServiceLinkNode.svg?branch=master)](https://travis-ci.org/SudharakaP/ServiceLinkNode)
 
 Server for deploying the Service-Link-Angular application.
 
