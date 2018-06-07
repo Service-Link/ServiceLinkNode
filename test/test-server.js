@@ -10,7 +10,7 @@ describe('Testing Server', function() {
     this.timeout(10000);
   });
 
-  it('Public endpoint returns "<title>ServiceLink</title>"', function(done){
+  it('Public endpoint returns "<title>Service-Link</title>"', function(done){
     var responseString = '';
 
     var options = {
@@ -25,7 +25,7 @@ describe('Testing Server', function() {
       });
 
       response.on('end', function () {
-        expect(responseString).to.include('<title>ServiceLink</title>');
+        expect(responseString).to.include('<title>Service-Link</title>');
         done();
       });
     };
