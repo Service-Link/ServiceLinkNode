@@ -15,7 +15,7 @@ require('./routers/index')(app, logger);
 
 const port = process.env.PORT || localConfig.port;
 app.listen(port, function(){
-  logger.info(`ServiceLinkNode listening on http://localhost:${port}/appmetrics-dash`);
+  logger.info(`Prometheus listening on http://localhost:${port}/appmetrics-dash`);
   logger.info(`OpenAPI (Swagger) spec is available at http://localhost:${port}/swagger/api`);
   logger.info(`Swagger UI is available at http://localhost:${port}/explorer`);
 });
