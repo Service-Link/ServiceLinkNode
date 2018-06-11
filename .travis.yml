@@ -2,18 +2,16 @@ language: node_js
 sudo: false
 node_js:
   - "8.9.0"
-cache:
-  directories:
-    - node_modules
-jobs:
-  include:
-    - stage: test
-        script:
-          - npm install && npm test
-    - stage: deploy
-        if: tag =~ v(.+)
-          - bash ./deploy.sh
-            deploy: 
-              provider: gae
-              keyfile: "gcloudkey.json"
-              project: "service-link-angular"
+install:
+  - npm install
+script:
+  - npm test
+after_success: 
+  - bash ./deploy.sh 
+deploy: 
+  provider: gae
+  keyfile: "gcloudkey.json"
+  project: "service-link-angular"
+  on:
+    all_branches: true
+    condition: "$TRAVIS_TAG =~ ^v(.+)"
