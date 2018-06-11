@@ -4,7 +4,7 @@ REPO="https://github.com/SudharakaP/Service-Link-Angular.git"
 cd .. && git clone $REPO && cd Service-Link-Angular
 
 # Run the install and build and copy the files over
-npm run install
+npm install
 npm run build
 cp -rf dist/* ../ServiceLinkNode/public/
 
