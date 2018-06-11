@@ -2,7 +2,20 @@ language: node_js
 sudo: false
 node_js:
   - "8.9.0"
-install:
-  - npm install
-script:
-  - npm test
+cache:
+  directories:
+    - node_modules
+jobs:
+  include:
+    - stage: test
+        install:
+          - npm install
+        script:
+          - npm test
+    - stage: deploy
+        if: tag =~ v(.+)
+          bash ./deploy.sh
+            deploy: 
+              provider: gae
+              keyfile: "gcloudkey.json"
+              project: "service-link-angular"
