@@ -29,5 +29,5 @@ skip_files:
 - \.vscode
 - swagger.yaml
 - \.travis\.yml
-- public\\swagger-ui
-- public\\swagger\.yaml
+- public/swagger-ui
+- public/swagger\.yaml
