@@ -8,10 +8,8 @@ cache:
 jobs:
   include:
     - stage: test
-        install:
-          - npm install
         script:
-          - npm test
+          - npm install && npm test
     - stage: deploy
         if: tag =~ v(.+)
           - bash ./deploy.sh
