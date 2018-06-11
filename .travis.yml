@@ -13,7 +13,7 @@ after_success:
 deploy: 
   provider: gae
   keyfile: "gcloudkey.json"
-  project: "service-link-angular"
+  project: "service-link-website"
   on:
     all_branches: true
     condition: "$TRAVIS_TAG =~ ^v(.+)"
