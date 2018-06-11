@@ -15,5 +15,6 @@ deploy:
   keyfile: "gcloudkey.json"
   project: "service-link-website-206921"
   on:
+    tags: true
     all_branches: true
     condition: "$TRAVIS_TAG =~ ^v(.+)"
