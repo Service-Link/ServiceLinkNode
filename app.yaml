@@ -1,0 +1,33 @@
+# Deployment script for GCP
+
+runtime: nodejs
+env: flex
+
+manual_scaling:
+  instances: 1
+
+handlers:
+- url: /(.+)
+  static_files: public/\1
+  upload: public/(.*)
+
+- url: /
+  static_files: public/index.html
+  upload: public/index.html
+
+# Temporary setting to keep gcloud from uploading non required files for deployment
+skip_files:
+- node_modules
+- app\.yaml
+- README\.md
+- \.gitignore
+- \.git
+- src
+- test
+- log
+- \.editorconfig
+- \.vscode
+- swagger.yaml
+- \.travis\.yml
+- public\\swagger-ui
+- public\\swagger\.yaml
