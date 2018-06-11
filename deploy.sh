@@ -12,4 +12,5 @@ cp -rf dist/* ../ServiceLinkNode/public/
 cd ../ServiceLinkNode
 
 # Decrypt the key file
-openssl aes-256-cbc -K $encrypted_5cc90922a0ab_key -iv $encrypted_5cc90922a0ab_iv -in gcloudkey.json.enc -out gcloudkey.json -d
+openssl aes-256-cbc -K $encrypted_5cc90922a0ab_key -iv $encrypted_5cc90922a0ab_iv -in secrets.tar.enc -out secrets.tar -d
+tar xvf secrets.tar
