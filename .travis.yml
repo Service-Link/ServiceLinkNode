@@ -10,7 +10,8 @@ script:
   - npm test
 after_success: 
   - bash ./deploy.sh 
-deploy: 
+deploy:
+  skip_cleanup: true 
   provider: gae
   keyfile: "gcloudkey.json"
   project: "service-link-website-206921"
