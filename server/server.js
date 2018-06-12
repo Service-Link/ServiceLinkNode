@@ -1,12 +1,14 @@
 require('appmetrics-dash').attach();
 require('appmetrics-prometheus').attach();
 const appName = require('./../package').name;
-const express = require('express');
+var express = require('express');
 const log4js = require('log4js');
 const localConfig = require('./config/local.json');
 const logConfig = require('./config/log4js.json');
 const path = require('path');
 const app = express();
+const httpsRedirect = require('express-https-redirect');
+app.use('/', httpsRedirect());
 
 log4js.configure(logConfig);
 const logger = log4js.getLogger(appName);

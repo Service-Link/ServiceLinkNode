@@ -23,6 +23,7 @@
     "appmetrics-prometheus": "^0.0.2",
     "body-parser": "^1.18.3",
     "express": "^4.15.3",
+    "express-https-redirect": "^1.0.0",
     "handlebars": "^4.0.11",
     "log4js": "^2.8.0",
     "nodemailer": "^4.6.4"
