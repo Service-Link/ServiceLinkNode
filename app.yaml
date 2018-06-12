@@ -1,5 +1,4 @@
 # Deployment script for GCP
-
 runtime: nodejs
 env: flex
 
