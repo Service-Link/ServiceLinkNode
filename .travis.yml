@@ -11,10 +11,10 @@ script:
 after_success: 
   - bash ./deploy.sh 
 deploy:
-  skip_cleanup: true 
   provider: gae
   keyfile: "gcloudkey.json"
   project: "service-link-website-206921"
+  skip_cleanup: true
   on:
     tags: true
     all_branches: true
