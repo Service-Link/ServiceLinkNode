@@ -1,5 +1,4 @@
-# ServiceLinkNode [![Build Status](https://travis-ci.org/Service-Link/ServiceLinkNode.svg?branch=master)](https://travis-ci.org/Service-Link/ServiceLinkNode) [![Known Vulnerabilities](https://snyk.io/test/github/SudharakaP/ServiceLinkNode/badge.svg)](https://snyk.io/test/github/SudharakaP/ServiceLinkNode)
-
+# ServiceLinkNode [![Build Status](https://travis-ci.org/Service-Link/ServiceLinkNode.svg?branch=master)](https://travis-ci.org/Service-Link/ServiceLinkNode) [![Known Vulnerabilities](https://snyk.io/test/github/SudharakaP/ServiceLinkNode/badge.svg)](https://snyk.io/test/github/SudharakaP/ServiceLinkNode) [![Greenkeeper badge](https://badges.greenkeeper.io/Service-Link/ServiceLinkNode.svg)](https://greenkeeper.io/)
 
 Server for deploying the Service-Link-Angular application.
 
