@@ -5,7 +5,6 @@ app.yaml
 README.md
 .gitignore
 .git
-src/**
 test/**
 log/**
 .editorconfig
