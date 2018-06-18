@@ -11,3 +11,9 @@ npm run dev: Runs Nodeman (http://nodemon.io/)
 ## Deploying
 
 Copy prodution ready (i.e: ng build --prod) files from Service-Link-Angular to the public directory. 
+
+## Travis CI
+
+- Any commit will trigger a Travis build and run the unit tests. Relavant Travis build page for this project can be found at, https://travis-ci.org/Service-Link/ServiceLinkNode
+
+- A tagged release will trigger the Travis build + deployment on GCP
