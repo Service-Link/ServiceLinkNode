@@ -3,22 +3,30 @@ os:
 language: node_js
 sudo: false
 node_js:
-  - "8.9.0"
+  - 8.9.0
 notifications:
   email:
-    - support@service-link.us
+  - support@service-link.us
+before_install:
+  - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+  - npm install -g greenkeeper-lockfile
 install:
   - npm install
+before_script: greenkeeper-lockfile-update
 script:
   - npm test
-after_success: 
-  - bash ./deploy.sh 
+after_script: greenkeeper-lockfile-upload
+after_success:
+  - bash ./deploy.sh
 deploy:
   provider: gae
-  keyfile: "gcloudkey.json"
-  project: "service-link-website-206921"
+  keyfile: gcloudkey.json
+  project: service-link-website-206921
   skip_cleanup: true
   on:
     tags: true
     all_branches: true
     condition: "$TRAVIS_TAG =~ ^v(.+)"
+env:
+  global:
+    secure: I+VLxFeMekBzncNIhbfif03WLsuPYuhbCWDDWwPbTDUFunD/7GgF6+GiToVyzJ6FnuHLZok+sYfUv5Emi6PMnVNvZKDFQ0P+lmnL+0860w+tOqmYkpzQGkWy8YUg/ZnZYTRgZSFIHsn5fb1dlYOJg37IRKxnuklW+6VB8mU34hzJfkk/HE8oJ3eO/w4f7BwobekBwGxr/aSOdOSNHGOp20oHKFNgY9j78U11+i5UyPYmii/+vTLghRz/4IimuOf60wuXj93Tw2dXbZb0vIZ0IEAalNoJtVSD2eA5fltWOOz1daVM7f2GtdnX+Mr80lxT7NVrM9XFy3iN9mda/43pqwDDcdqOeZy1+BpHRhk67qOOYeBUCyUt4DSeUceDfH2+adK/8IgRIoGTjnxDJtgjZKFAviQI71f5etyKrlP2qp1NbIjSKKRUO9TuilQNjTklnlG/yvL6gaOwS8y+a6WH1P27c2rab/Dzch7LkQ9GZ1c7tH3OvqcsH+bMBXEuX1aXN0/wnI8T1HZ/s0/IzhSiFHqZdurLZ8N7x63WY6NPRtH1d/s+vrRR3VCRmY4t4DHKXUK8Yd8dyKu9rmarARcoZtD4cFAH1SHKa3X/0fYyT4kG98m99Hgm8t5oDtTmUua5k8odhoAbulpNcx2aZ92lKOXadumdpqfvO8AnJ1Kfb14=
