@@ -20,7 +20,7 @@
   "dependencies": {
     "@log4js-node/smtp": "^1.0.0",
     "appmetrics-dash": "^3.3.2",
-    "appmetrics-prometheus": "^1.0.1",
+    "appmetrics-prometheus": "^2.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.15.3",
     "express-https-redirect": "^1.0.0",
