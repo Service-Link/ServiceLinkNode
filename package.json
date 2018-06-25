@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@log4js-node/smtp": "^1.0.0",
-    "appmetrics-dash": "^3.3.2",
+    "appmetrics-dash": "^4.0.0",
     "appmetrics-prometheus": "^1.0.1",
     "body-parser": "^1.18.3",
     "express": "^4.15.3",
