@@ -16,4 +16,4 @@ Copy prodution ready (i.e: ng build --prod) files from Service-Link-Angular to t
 
 - Any commit will trigger a Travis build and run the unit tests. Relavant Travis build page for this project can be found at, https://travis-ci.org/Service-Link/ServiceLinkNode
 
-- A tagged release will trigger the Travis build + deployment on GCP. To create a tag on local execute `git tag -a <tag-name> -m <message>` and to push it `tag push origin <tag>`
+- A tagged release will trigger the Travis build + deployment on GCP. To create a tag on local execute `git tag -a <tag-name> -m <message>` and to push it `git push origin <tag-name>`
