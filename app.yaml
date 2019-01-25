@@ -13,8 +13,8 @@ handlers:
   secure: always
 
 - url: /(.+)
-   script: auto
-   secure: always 
+  script: auto
+  secure: always 
 
 - url: /
   static_files: public/index.html
