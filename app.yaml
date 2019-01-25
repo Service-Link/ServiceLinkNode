@@ -12,6 +12,6 @@ handlers:
   upload: public/(.+\.(.+))
   secure: always
 
-- url: /(.*)
+- url: /.*
   script: auto
-  secure: always
+  secure: always  
