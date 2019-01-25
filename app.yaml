@@ -12,6 +12,12 @@ handlers:
   upload: public/(.+\.(.+))
   secure: always
 
-- url: /.*
+- url: /
+  static_files: public/index.html
+  upload: public/index.html
+  secure: always
+
+- url: /(.+)
   script: auto
-  secure: always  
+  secure: always
+  
