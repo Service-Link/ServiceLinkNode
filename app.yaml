@@ -15,4 +15,4 @@ handlers:
 - url: /
   static_files: public/index.html
   upload: public/index.html
-  secure: always
+  secure: always 
