@@ -7,9 +7,13 @@ automatic_scaling:
   max_instances: 1 
 
 handlers:
-- url: /(.+)
+- url: /(.+\.(.+))
   static_files: public/\1
   upload: public/(.*)
+  secure: always
+
+- url: /(.+)
+  script: auto
   secure: always
 
 - url: /
