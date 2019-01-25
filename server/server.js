@@ -1,5 +1,6 @@
 require('appmetrics-dash').attach();
 require('appmetrics-prometheus').attach();
+require('@google-cloud/debug-agent').start();
 const appName = require('./../package').name;
 var express = require('express');
 const log4js = require('log4js');
