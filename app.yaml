@@ -1,23 +1,13 @@
 # Deployment script for GCP
 runtime: nodejs8
 
-instance_class: F1
+instance_class: F2
 
 automatic_scaling:
   max_instances: 1 
 
 handlers:
-- url: /(.+\.(.+))
-  static_files: public/\1
-  upload: public/(.+\.(.+))
-  secure: always
-
-- url: /
-  static_files: public/index.html
-  upload: public/index.html
-  secure: always
-
-- url: /(.+)
+- url: /(.*)
   script: auto
   secure: always
   
