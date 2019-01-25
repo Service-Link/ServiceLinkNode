@@ -9,10 +9,13 @@ automatic_scaling:
 handlers:
 - url: /(.+\.(.+))
   static_files: public/\1
-  upload: public/(.*)
+  upload: public/(.+\.(.+))
   secure: always
 
 - url: /(.*)
   static_files: public/index.html
   upload: public/index.html
   secure: always
+
+error_handlers: 
+  - file: public/500.html
