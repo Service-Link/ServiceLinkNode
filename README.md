@@ -8,11 +8,11 @@ npm run start: Start server normally
 npm run debug: Debug server
 npm run dev: Runs Nodeman (http://nodemon.io/)
 
+## Encryption of Config Files
+
+Normally `server/config/log4js.json`, `server/config/mail-config.json` and `gcloudkey.json` needs to be encrypted. Please refer to the creation of tar file and encryption at https://docs.travis-ci.com/user/encrypting-files/. 
+
 ## Deploying
-
-Copy prodution ready (i.e: ng build --prod) files from Service-Link-Angular to the public directory. 
-
-## Travis CI
 
 - Any commit will trigger a Travis build and run the unit tests. Relavant Travis build page for this project can be found at, https://travis-ci.org/Service-Link/ServiceLinkNode
 
