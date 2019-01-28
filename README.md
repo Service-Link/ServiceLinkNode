@@ -17,3 +17,9 @@ Normally `server/config/log4js.json`, `server/config/mail-config.json` and `gclo
 - Any commit will trigger a Travis build and run the unit tests. Relavant Travis build page for this project can be found at, https://travis-ci.org/Service-Link/ServiceLinkNode
 
 - A tagged release will trigger the Travis build + deployment on GCP. To create a tag on local execute `git tag -a <tag-name> -m <message>` and to push it `git push origin <tag-name>`
+
+## Additional Notes
+
+- GCP Stackdriver (https://cloud.google.com/stackdriver/) for debugging is supported in this app. 
+
+- Some outstanding issues and roadmap can be found in the Projects pages (https://github.com/Service-Link/Service-Link-Angular/projects and https://github.com/Service-Link/ServiceLinkNode/projects) 
