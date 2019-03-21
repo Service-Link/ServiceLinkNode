@@ -4,7 +4,7 @@
   "description": "Service-Link Website",
   "private": true,
   "engines": {
-    "node": "^8.0.0"
+    "node": "^8.15.1"
   },
   "scripts": {
     "start": "node server/server.js",
