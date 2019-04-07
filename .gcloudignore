@@ -1,5 +1,6 @@
 # Setting to keep gcloud from uploading non required files for deployment
 
+node_modules/**
 app.yaml
 README.md
 .gitignore
