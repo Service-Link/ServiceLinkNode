@@ -20,7 +20,7 @@
   "dependencies": {
     "@google-cloud/debug-agent": "^4.0.0",
     "@log4js-node/smtp": "^1.0.0",
-    "appmetrics-dash": "^4.0.0",
+    "appmetrics-dash": "^5.3.0",
     "appmetrics-prometheus": "^2.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.15.3",
