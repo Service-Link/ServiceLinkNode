@@ -30,7 +30,7 @@
     "nodemailer": "^6.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1",
+    "nodemon": "^2.0.2",
     "chai": "^4.0.0",
     "mocha": "^6.0.0",
     "nyc": "^14.0.0",
